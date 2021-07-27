@@ -6,5 +6,8 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(args));
+        
+        //Classes - Produtos, Cliente, Compra
+        //Nome, Valor, Total, Quantidade, Comprar
     }
 }
