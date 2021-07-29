@@ -1,7 +1,6 @@
 package br.com.diego.archetypes.vendinha;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 
 import br.com.diego.vendinha.domain.Cliente;
 import br.com.diego.vendinha.domain.Compra;
@@ -19,16 +18,18 @@ public class App {
         
         Compra compra = c.comprar(p1, 5);
         
-        //ItemCompra item = compra.(compra);
-              
+        compra.addProduto(p2, 2);
         
-        System.out.println("Id compra.... " + compra.getId());
-        System.out.println("Cliente...... " + compra.getCliente().getNome());
-        System.out.println("Produto...... " + item.getProduto());
-        //System.out.println("Produto...... " + compra.getProduto().getNome());
-        //System.out.println("Quantidade... " + compra.getQtd());
-        //System.out.println("Valor........ R$ " + compra.getValorUnit());
-        System.out.println("Total........ R$ " + compra.getTotal());
+              
+        System.out.println("Cliente....: " + compra.getCliente().getId() + " - " + compra.getCliente().getNome());
+    	for (ItemCompra i : compra.getItens()) {
+			System.out.println("");
+    		System.out.println("Produto....: " + i.getProduto().getNome());
+    		System.out.println("Qtd........: " + i.getQtd());
+    		System.out.println("Valor UN...: " + i.getProduto().getValor());
+    		System.out.println("Total......: " + i.getTotal());
+		}
+    	System.out.println("\nTotal G....: " + compra.getTotal());
         
     }
 }
